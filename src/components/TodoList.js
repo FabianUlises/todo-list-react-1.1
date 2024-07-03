@@ -5,7 +5,7 @@ const TodoList = ({ todos, setTodos }) => {
     const displayTodos = todos.map((todo) => (<Todo todo={todo} />));
     return (
         <ul>
-            { displayTodos }
+            { todos.length ? displayTodos : null }
         </ul>
     );
 };
