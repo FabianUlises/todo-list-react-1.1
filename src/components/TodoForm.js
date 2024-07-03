@@ -35,6 +35,7 @@ const TodoForm = ({ setTodos }) => {
     return (
         <form onSubmit={handleSubmit}>
             <input type='text' placeholder='enter task' value={input} maxLength={60} required autoFocus onChange={handleInputChange} />
+            <button type='submit' aria-label='submit'>submit</button>
         </form>
     );
 };
