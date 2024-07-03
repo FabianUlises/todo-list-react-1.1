@@ -21,6 +21,8 @@ const TodoList = ({ todos, setTodos }) => {
     };
     // Function to update todo with new task value using todoId
     const updateTodo = (todoId, value) => {
+        // Validating user input
+        if(value === '' || /^\s*$/.test(value)) return;
         // Updating todos state with new value
         setTodos((currentTodos) =>
             currentTodos.map((todo) =>
