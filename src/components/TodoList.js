@@ -19,6 +19,17 @@ const TodoList = ({ todos, setTodos }) => {
             )
         );
     };
+    // Function to update todo with new task value using todoId
+    const updateTodo = (todoId, value) => {
+        // Updating todos state with new value
+        setTodos((currentTodos) =>
+            currentTodos.map((todo) =>
+                todo.id === todoId ?
+                { ...todo, task: value, isEditing: !todo.isEditing } :
+                todo
+            )
+        );
+    };
     // Function to delete todo from todo state using todoid
     const deleteTodo = (todoId) => {
         // Using setTodos to delete selected todo and update state
