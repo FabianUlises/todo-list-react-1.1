@@ -3,8 +3,15 @@ import './App.css';
 import TodoForm from './components/TodoForm';
 
 function App() {
+  // Function to get localstorage todos
+  const getLocalStorage = () => {
+    // Setting items to todos if any if not setting to empty array
+    let items = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
+    // Returning items
+    return items;
+  };
   // State
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(getLocalStorage());
   // useEffect
   useEffect(() => {
     // Adding todos to local storage
