@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Todo from './Todo';
+import EditTodoForm from './EditTodoForm';
 const TodoList = ({ todos, setTodos }) => {
     // Function to toggle complete value on todo using todoid
     const toggleComplete = (todoId) => {
@@ -40,7 +41,12 @@ const TodoList = ({ todos, setTodos }) => {
         });
     };
     // Function to map throught and display todos in state
-    const displayTodos = todos.map((todo) => (<Todo todo={todo} toggleComplete={toggleComplete} toggleEdit={toggleEdit} deleteTodo={deleteTodo} />));
+    const displayTodos = todos.map((todo) => (
+        todo.isEditing ?
+        <EditTodoForm todo={todo} updateTodo={updateTodo} /> :
+        <Todo todo={todo} toggleComplete={toggleComplete} toggleEdit={toggleEdit} deleteTodo={deleteTodo} />
+        )
+    );
     return (
         <ul>
             { todos.length ? displayTodos : null }
