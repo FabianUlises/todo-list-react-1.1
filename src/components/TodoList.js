@@ -19,8 +19,15 @@ const TodoList = ({ todos, setTodos }) => {
             )
         );
     };
+    // Function to delete todo from todo state using todoid
+    const deleteTodo = (todoId) => {
+        // Using setTodos to delete selected todo and update state
+        setTodos((currentTodos) => {
+            return currentTodos.filter((todo) => todo.id !== todoId);
+        });
+    };
     // Function to map throught and display todos in state
-    const displayTodos = todos.map((todo) => (<Todo todo={todo} toggleComplete={toggleComplete} toggleEdit={toggleEdit} />));
+    const displayTodos = todos.map((todo) => (<Todo todo={todo} toggleComplete={toggleComplete} toggleEdit={toggleEdit} deleteTodo={deleteTodo} />));
     return (
         <ul>
             { todos.length ? displayTodos : null }
