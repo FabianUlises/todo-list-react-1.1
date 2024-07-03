@@ -1,9 +1,7 @@
 import React from 'react'
 
-const Todo = ({ todo }) => {
-  return (
-    <div>{todo.task}</div>
+const Todo = ({ todo }) => (
+    <li key={todo.id}>{todo.task}<span>✏️</span><span>🗑️</span></li>
   );
-};
 
 export default Todo;
