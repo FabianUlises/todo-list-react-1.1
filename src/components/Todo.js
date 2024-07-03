@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Todo = ({ todo,toggleComplete }) => (
+const Todo = ({ todo,toggleComplete, toggleEdit }) => (
     <li key={todo.id}>
         <p onClick={() => toggleComplete(todo.id)}>{todo.task}</p>
-        <span>✏️</span>
+        <span onClick={() => toggleEdit(todo.id)}>✏️</span>
         <span>🗑️</span>
     </li>
   );
