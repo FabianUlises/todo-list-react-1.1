@@ -41,7 +41,7 @@ const TodoList = ({ todos, setTodos }) => {
         });
     };
     // Function to map throught and display todos in state
-    const displayTodos = todos.map((todo) => (
+    const displayTodos = todos.sort((a, b) => a.id - b.id).map((todo) => (
         todo.isEditing ?
         <EditTodoForm todo={todo} updateTodo={updateTodo} /> :
         <Todo todo={todo} toggleComplete={toggleComplete} toggleEdit={toggleEdit} deleteTodo={deleteTodo} />
