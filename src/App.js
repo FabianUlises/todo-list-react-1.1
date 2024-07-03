@@ -1,6 +1,7 @@
 import React, { Component, useEffect, useState } from 'react';
 import './App.css';
 import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
 
 function App() {
   // Function to get localstorage todos
@@ -20,6 +21,7 @@ function App() {
   return (
     <div className="App">
       <TodoForm setTodos={setTodos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 };
