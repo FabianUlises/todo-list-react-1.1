@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <TodoForm setTodos={setTodos} />
-      <TodoList todos={todos} setTodos={setTodos} />
+      { todos.length ? <TodoList todos={todos} setTodos={setTodos}/> : 'No tasks yet' }
     </div>
   );
 };
