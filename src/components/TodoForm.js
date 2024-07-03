@@ -23,6 +23,15 @@ const TodoForm = ({ setTodos }) => {
             }]
         );
     };
+    // Handler function for form submit
+    const handleSubmit = (e) => {
+        // Prevent browser default refresh
+        e.preventDefault();
+        // Adding new task to todo state using user input
+        addTodo(input);
+        // Resetting input to empty string
+        setInput('');
+    };
     return (
         <form onSubmit={handleSubmit}>
             <input type='text' placeholder='enter task' value={input} maxLength={60} required autoFocus onChange={handleInputChange} />
