@@ -4,7 +4,7 @@ const TodoForm = () => {
     const [input, setInput] = useState('');
     return (
         <form>
-            <input type='text' />
+            <input type='text' placeholder='enter task' value={input} maxLength={60} required autoFocus />
         </form>
     );
 };
