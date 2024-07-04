@@ -14,6 +14,7 @@ function App() {
   };
   // State
   const [todos, setTodos] = useState(getLocalStorage());
+  const [filteredTodos, setFilteredTodos] = useState([]);
   const [status, setStatus] = useState('all');
   // useEffect
   useEffect(() => {
