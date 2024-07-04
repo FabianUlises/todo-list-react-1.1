@@ -14,6 +14,7 @@ function App() {
   };
   // State
   const [todos, setTodos] = useState(getLocalStorage());
+  const [status, setStatus] = useState('all');
   // useEffect
   useEffect(() => {
     // Adding todos to local storage
@@ -22,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <TodoForm setTodos={setTodos} />
-      <ListToggle />
+      <ListToggle setStatus={setStatus} />
       { todos.length ? <TodoList todos={todos} setTodos={setTodos}/> : 'No tasks yet' }
     </div>
   );
