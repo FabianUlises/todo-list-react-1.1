@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Todo from './Todo';
 import EditTodoForm from './EditTodoForm';
-const TodoList = ({ todos, setTodos }) => {
+const TodoList = ({ todos, setTodos, filteredTodos }) => {
     // Function to toggle complete value on todo using todoid
     const toggleComplete = (todoId) => {
         // Updating state with new value using todoid
@@ -41,7 +41,7 @@ const TodoList = ({ todos, setTodos }) => {
         });
     };
     // Function to map throught and display todos in state
-    const displayTodos = todos.sort((a, b) => a.id - b.id).map((todo) => (
+    const displayTodos = filteredTodos.sort((a, b) => a.id - b.id).map((todo) => (
         todo.isEditing ?
         <EditTodoForm todo={todo} updateTodo={updateTodo} /> :
         <Todo todo={todo} toggleComplete={toggleComplete} toggleEdit={toggleEdit} deleteTodo={deleteTodo} />
@@ -49,7 +49,7 @@ const TodoList = ({ todos, setTodos }) => {
     );
     return (
         <ul>
-            { todos.length ? displayTodos : null }
+            { filteredTodos.length ? displayTodos : null }
         </ul>
     );
 };
