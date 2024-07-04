@@ -44,7 +44,7 @@ const TodoList = ({ todos, setTodos, filteredTodos }) => {
     const displayTodos = filteredTodos.sort((a, b) => a.id - b.id).map((todo) => (
         todo.isEditing ?
         <EditTodoForm todo={todo} updateTodo={updateTodo} /> :
-        <Todo todo={todo} toggleComplete={toggleComplete} toggleEdit={toggleEdit} deleteTodo={deleteTodo} />
+        <Todo key={todo.id} todo={todo} toggleComplete={toggleComplete} toggleEdit={toggleEdit} deleteTodo={deleteTodo} />
         )
     );
     return (
