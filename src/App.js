@@ -2,6 +2,7 @@ import React, { Component, useEffect, useState } from 'react';
 import './App.css';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import ListToggle from './components/ListToggle';
 
 function App() {
   // Function to get localstorage todos
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <TodoForm setTodos={setTodos} />
+      <ListToggle />
       { todos.length ? <TodoList todos={todos} setTodos={setTodos}/> : 'No tasks yet' }
     </div>
   );
