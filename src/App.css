@@ -6,6 +6,16 @@
     gap: 1rem;
     border-radius: 4px;
 }
+.completed {
+    color: hsla(0 0% 100% / .4);
+    text-decoration: line-through;
+    transform: scale(.98);
+}
+.edit-todo-form input {
+    font-size: 18px;
+    padding: .4rem .2rem;
+    inline-size: 100%;
+}
 .todo-form {
     display: flex;
     flex-direction: column;

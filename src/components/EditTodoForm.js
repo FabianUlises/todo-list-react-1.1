@@ -17,9 +17,9 @@ const EditTodoForm = ({ todo, updateTodo }) => {
         setInput('');
     };
     return (
-        <form onSubmit={handleSubmit}>
-            <input type='text' placeholder='enter task' value={input} maxLength={60} required autoFocus onChange={handleInputChange} />
-            <button type='submit' aria-label='submit'>submit</button>
+        <form onSubmit={handleSubmit} className='todo-form'>
+            <input type='text' placeholder='enter task' value={input} maxLength={60} required autoFocus onChange={handleInputChange} className='todo-form-input' />
+            <button type='submit' aria-label='submit' className='todo-form-btn'>submit</button>
         </form>
     );
 };
