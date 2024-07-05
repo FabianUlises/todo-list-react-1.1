@@ -17,7 +17,8 @@ code {
 }
 #root {
   min-block-size: 100vh;
-  color: white;
+  color: light-dark(black,white);
+  background-color: light-dark(hsl(0, 0, 92%), #1c1b22);
   display: flex;
   flex-direction: column;
   align-items: center;
