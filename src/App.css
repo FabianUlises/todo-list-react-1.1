@@ -1,7 +1,6 @@
 .App {
-    background-color: darkslateblue;
     max-inline-size: max-content;
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -13,14 +12,48 @@
     align-items: center;
     gap: .5rem;
     .todo-form-input {
-        inline-size: 96%;
+        inline-size: 97%;
         padding: .8rem .2rem;
         margin: 0;
         border-radius: 4px;
         font-size: 18px;
+        outline: none;
+        border: 1px solid #8f8f9d;
+        &:hover, &:active, &:focus {
+            border: 1px solid lightskyblue;
+        }
     }
     .todo-form-btn {
         inline-size: 100%;
         padding-block: .4rem;
+        cursor: pointer;
+    }
+}
+.todo-list-filter {
+    inline-size: max-content;
+    font-size: 16px;
+    cursor: pointer;
+}
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    .todo-item {
+        display: flex;
+        align-items: center;
+        gap: .4rem;
+        &:not(:last-child) {
+            border-bottom: 2px solid darkslateblue;
+        }
+        & p {
+            inline-size: 100%;
+        }
+        &:hover {
+            cursor: pointer;
+        }
     }
 }

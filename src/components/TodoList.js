@@ -48,7 +48,7 @@ const TodoList = ({ todos, setTodos, filteredTodos }) => {
         )
     );
     return (
-        <ul>
+        <ul className='todo-list'>
             { filteredTodos.length ? displayTodos : null }
         </ul>
     );

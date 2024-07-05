@@ -17,7 +17,6 @@ code {
 }
 #root {
   min-block-size: 100vh;
-  background-color: darkslategrey;
   color: white;
   display: flex;
   flex-direction: column;

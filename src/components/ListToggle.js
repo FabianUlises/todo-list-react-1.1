@@ -7,7 +7,7 @@ const ListToggle = ({ setStatus }) => {
     setStatus(e.target.value);
   };
   return (
-    <select onChange={(e) => handleChange(e)} name='todos'>
+    <select className='todo-list-filter' onChange={(e) => handleChange(e)} name='todos'>
         <option value='all'>All</option>
         <option value='completed'>Completed</option>
         <option value='uncompleted'>Uncompleted</option>
